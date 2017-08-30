@@ -55,7 +55,7 @@ public class DynamoDBItemWriter implements ItemWriter<CurrentObservation> {
 	}
 
 	private void saveMinMax(CurrentObservation currentObservation, String id) {
-		log.info("saving {} ", id);
+		log.info("getting {} ", id);
 		ObservationMinMax minMax = minMaxRepository.findOne(id);
 		log.debug("{} {}", id, minMax);
 		boolean newMinMax = false;
@@ -74,7 +74,7 @@ public class DynamoDBItemWriter implements ItemWriter<CurrentObservation> {
 		minMax.setTimestampUpdate(ZonedDateTime.now());
 		if (newMinMax) {
 			log.debug("NEW MIN / MAX founded!");
-			log.debug("{} {}", id, minMax);
+			log.debug("saving {} {}", id, minMax);
 			minMaxRepository.save(minMax);
 		} else {
 			log.debug("NO new MIN / MAX founded!");
