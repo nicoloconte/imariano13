@@ -1,0 +1,3 @@
+com\wunderground\pws\application\ApplicationConfig.class
+com\wunderground\pws\application\ServletInitializer.class
+com\wunderground\pws\application\Application.class

@@ -1,0 +1,6 @@
+com\wunderground\pws\batch\processor\ConditionItemProcessor.class
+com\wunderground\pws\batch\reader\WundergroudRestReader.class
+com\wunderground\pws\batch\writer\DynamoDBItemWriter.class
+com\wunderground\pws\batch\configuration\BatchConfiguration.class
+com\wunderground\pws\batch\configuration\BatchScheduler.class
+com\wunderground\pws\batch\listener\JobCompletionNotificationListener.class

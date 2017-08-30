@@ -1,0 +1,6 @@
+D:\Workspace\pws\imariano13\imariano13-batch\src\main\java\com\wunderground\pws\batch\configuration\BatchConfiguration.java
+D:\Workspace\pws\imariano13\imariano13-batch\src\main\java\com\wunderground\pws\batch\reader\WundergroudRestReader.java
+D:\Workspace\pws\imariano13\imariano13-batch\src\main\java\com\wunderground\pws\batch\writer\DynamoDBItemWriter.java
+D:\Workspace\pws\imariano13\imariano13-batch\src\main\java\com\wunderground\pws\batch\processor\ConditionItemProcessor.java
+D:\Workspace\pws\imariano13\imariano13-batch\src\main\java\com\wunderground\pws\batch\listener\JobCompletionNotificationListener.java
+D:\Workspace\pws\imariano13\imariano13-batch\src\main\java\com\wunderground\pws\batch\configuration\BatchScheduler.java

@@ -1,0 +1,4 @@
+com\wunderground\pws\persistence\converter\ZonedDateTimeDynamoConverter.class
+com\wunderground\pws\persistence\repositories\ConditionRepository.class
+com\wunderground\pws\persistence\repositories\MinMaxRepository.class
+com\wunderground\pws\persistence\configuration\DynamoDBConfiguration.class

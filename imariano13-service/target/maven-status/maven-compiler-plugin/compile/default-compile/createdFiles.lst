@@ -1,0 +1,3 @@
+com\wunderground\pws\service\configuration\ServiceConfiguration.class
+com\wunderground\pws\service\MinMaxService.class
+com\wunderground\pws\service\MinMaxServiceImpl.class
