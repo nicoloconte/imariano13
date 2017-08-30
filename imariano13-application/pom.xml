@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>com.wunderground.pws</groupId>
 		<artifactId>imariano13</artifactId>
-		<version>1.1.1-SNAPSHOT</version>
+		<version>1.1.2-SNAPSHOT</version>
 	</parent>
 	<artifactId>imariano13-application</artifactId>
 	<packaging>war</packaging>
@@ -23,27 +23,27 @@
 		<dependency>
 			<groupId>com.wunderground.pws</groupId>
 			<artifactId>imariano13-model</artifactId>
-			<version>1.1.1-SNAPSHOT</version>
+			<version>1.1.2-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.wunderground.pws</groupId>
 			<artifactId>imariano13-persistence</artifactId>
-			<version>1.1.1-SNAPSHOT</version>
+			<version>1.1.2-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.wunderground.pws</groupId>
 			<artifactId>imariano13-batch</artifactId>
-			<version>1.1.1-SNAPSHOT</version>
+			<version>1.1.2-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.wunderground.pws</groupId>
 			<artifactId>imariano13-service</artifactId>
-			<version>1.1.1-SNAPSHOT</version>
+			<version>1.1.2-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.wunderground.pws</groupId>
 			<artifactId>imariano13-rest</artifactId>
-			<version>1.1.1-SNAPSHOT</version>
+			<version>1.1.2-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 
