@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>com.wunderground.pws</groupId>
 		<artifactId>imariano13</artifactId>
-		<version>1.1.2-SNAPSHOT</version>
+		<version>1.1.4-SNAPSHOT</version>
 	</parent>
 	<artifactId>imariano13-model</artifactId>
 
@@ -24,7 +24,7 @@
 		<dependency>
 			<groupId>com.amazonaws</groupId>
 			<artifactId>aws-java-sdk-dynamodb</artifactId>
-			<version>1.11.183</version>
+			<version>${aws-java-sdk-dynamodb.version}</version>
 		</dependency>
 	</dependencies>
 </project>

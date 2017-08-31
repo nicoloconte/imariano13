@@ -27,6 +27,7 @@ import com.wunderground.pws.batch.writer.DynamoDBItemWriter;
 import com.wunderground.pws.model.Condition;
 import com.wunderground.pws.model.CurrentObservation;
 import com.wunderground.pws.persistence.repositories.ConditionRepository;
+import com.wunderground.pws.persistence.repositories.LastObservationRepository;
 import com.wunderground.pws.persistence.repositories.MinMaxRepository;
 
 @Configuration
@@ -47,6 +48,8 @@ public class BatchConfiguration {
 	private ConditionRepository conditionRepository;
 	@Autowired
 	private MinMaxRepository minMaxRepository;
+	@Autowired
+	private LastObservationRepository lastObservationRepository;
 	@Value("${wu.token}")
 	private String token;
 	@Value("${wu.condition.url}")
@@ -72,7 +75,7 @@ public class BatchConfiguration {
 
 	@Bean
 	public DynamoDBItemWriter writer() {
-		DynamoDBItemWriter writer = new DynamoDBItemWriter(conditionRepository, minMaxRepository);
+		DynamoDBItemWriter writer = new DynamoDBItemWriter(conditionRepository, minMaxRepository, lastObservationRepository);
 		return writer;
 	}
 

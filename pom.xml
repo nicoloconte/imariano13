@@ -3,13 +3,24 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.wunderground.pws</groupId>
 	<artifactId>imariano13</artifactId>
-	<version>1.1.2-SNAPSHOT</version>
+	<version>1.1.4-SNAPSHOT</version>
 	<packaging>pom</packaging>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<imariano13.version>1.1.4-SNAPSHOT</imariano13.version>
+
+		<spring-boot.version>1.5.6.RELEASE</spring-boot.version>
+		<commons-lang3.version>3.6</commons-lang3.version>
+		<spring-data-dynamodb.version>4.5.1</spring-data-dynamodb.version>
+		<aws-java-sdk-dynamodb.version>1.11.186</aws-java-sdk-dynamodb.version>
+	</properties>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.2.RELEASE</version>
+		<version>1.5.6.RELEASE</version>
 	</parent>
 
 	<dependencies>
@@ -29,13 +40,9 @@
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
-			<version>3.6</version>
+			<version>${commons-lang3.version}</version>
 		</dependency>
 	</dependencies>
-
-	<properties>
-		<java.version>1.8</java.version>
-	</properties>
 
 	<modules>
 		<module>imariano13-batch</module>

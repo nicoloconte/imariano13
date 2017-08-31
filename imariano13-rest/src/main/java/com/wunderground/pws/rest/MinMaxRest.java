@@ -15,7 +15,7 @@ import com.wunderground.pws.model.ObservationMinMax;
 import com.wunderground.pws.service.MinMaxService;
 
 @Controller
-@RequestMapping("/condition/extremes")
+@RequestMapping("/conditions")
 public class MinMaxRest {
 
 	private static final Logger log = LoggerFactory.getLogger(MinMaxRest.class);
@@ -23,8 +23,8 @@ public class MinMaxRest {
 	@Autowired
 	private MinMaxService minMaxService;
 
-	@RequestMapping(method = RequestMethod.GET)
-	public @ResponseBody Map<String, List<ObservationMinMax>> sayHello() {
+	@RequestMapping(method = RequestMethod.GET, path = "/extremes")
+	public @ResponseBody Map<String, List<ObservationMinMax>> getMinMax() {
 		log.info("getting MIN MAX");
 		return minMaxService.getMinMax();
 	}

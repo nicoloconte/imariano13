@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>com.wunderground.pws</groupId>
 		<artifactId>imariano13</artifactId>
-		<version>1.1.2-SNAPSHOT</version>
+		<version>1.1.4-SNAPSHOT</version>
 	</parent>
 	<artifactId>imariano13-rest</artifactId>
 
@@ -12,7 +12,7 @@
 		<dependency>
 			<groupId>com.wunderground.pws</groupId>
 			<artifactId>imariano13-service</artifactId>
-			<version>1.1.2-SNAPSHOT</version>
+			<version>${imariano13.version}</version>
 		</dependency>
 	
 		<dependency>

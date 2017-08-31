@@ -8,8 +8,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemWriter;
 
 import com.wunderground.pws.model.CurrentObservation;
+import com.wunderground.pws.model.LastObservation;
 import com.wunderground.pws.model.ObservationMinMax;
 import com.wunderground.pws.persistence.repositories.ConditionRepository;
+import com.wunderground.pws.persistence.repositories.LastObservationRepository;
 import com.wunderground.pws.persistence.repositories.MinMaxRepository;
 
 public class DynamoDBItemWriter implements ItemWriter<CurrentObservation> {
@@ -21,20 +23,42 @@ public class DynamoDBItemWriter implements ItemWriter<CurrentObservation> {
 
 	private ConditionRepository conditionRepository;
 	private MinMaxRepository minMaxRepository;
+	private LastObservationRepository lastObservationRepository;
 
-	public DynamoDBItemWriter(ConditionRepository conditionRepository, MinMaxRepository minMaxRepository) {
+	public DynamoDBItemWriter(ConditionRepository conditionRepository, MinMaxRepository minMaxRepository, LastObservationRepository lastObservationRepository) {
 		super();
 		this.conditionRepository = conditionRepository;
 		this.minMaxRepository = minMaxRepository;
+		this.lastObservationRepository = lastObservationRepository;
 	}
 
 	@Override
 	public void write(List<? extends CurrentObservation> items) throws Exception {
 		log.debug("saving {} items", items.size());
 		for (CurrentObservation currentObservation : items) {
-			conditionRepository.save(currentObservation);
+			currentObservation = conditionRepository.save(currentObservation);
+			saveLastObservation(currentObservation);
 			saveMinMax(currentObservation);
 		}
+	}
+
+	private void saveLastObservation(CurrentObservation currentObservation) {
+		log.info("saving last observation");
+		LastObservation lastObservation = new LastObservation();
+		long count = lastObservationRepository.count();
+		log.debug("last observation count {}", count);
+		switch ((int) count) {
+		case 0:
+			break;
+		case 1:
+			lastObservation = lastObservationRepository.findAll().iterator().next();
+		default:
+			lastObservationRepository.deleteAll();
+			break;
+		}
+		log.debug("saving NEW last observation id {}", currentObservation.getId());
+		lastObservation.setId(currentObservation.getId());
+		lastObservationRepository.save(lastObservation);
 	}
 
 	private void saveMinMax(CurrentObservation currentObservation) {

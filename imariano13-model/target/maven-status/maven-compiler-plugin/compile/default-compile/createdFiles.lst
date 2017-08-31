@@ -1,3 +1,4 @@
+com\wunderground\pws\model\LastObservation.class
 com\wunderground\pws\model\CurrentObservation.class
 com\wunderground\pws\model\converter\ZonedDateTimeDynamoConverter.class
 com\wunderground\pws\model\Condition.class
