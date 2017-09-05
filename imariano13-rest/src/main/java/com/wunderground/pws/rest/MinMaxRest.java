@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.wunderground.pws.model.ObservationMinMax;
+import com.wunderground.pws.model.entities.ObservationMinMax;
 import com.wunderground.pws.service.MinMaxService;
 
 @Controller

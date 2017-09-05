@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="imariano13-application-1.1.4-SNAPSHOT">
+    <wb-module deploy-name="imariano13-application-1.1.12-SNAPSHOT">
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
-        <dependent-module archiveName="imariano13-model-1.1.4-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/imariano13-model/imariano13-model">
+        <dependent-module archiveName="imariano13-model-1.1.12-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/imariano13-model/imariano13-model">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="imariano13-persistence-1.1.4-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/imariano13-persistence/imariano13-persistence">
+        <dependent-module archiveName="imariano13-persistence-1.1.12-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/imariano13-persistence/imariano13-persistence">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="imariano13-batch-1.1.4-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/imariano13-batch/imariano13-batch">
+        <dependent-module archiveName="imariano13-batch-1.1.12-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/imariano13-batch/imariano13-batch">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="imariano13-service-1.1.4-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/imariano13-service/imariano13-service">
+        <dependent-module archiveName="imariano13-service-1.1.12-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/imariano13-service/imariano13-service">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="imariano13-rest-1.1.4-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/imariano13-rest/imariano13-rest">
+        <dependent-module archiveName="imariano13-rest-1.1.12-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/imariano13-rest/imariano13-rest">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <property name="context-root" value="imariano13-application"/>

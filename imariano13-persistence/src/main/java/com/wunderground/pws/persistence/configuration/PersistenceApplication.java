@@ -1,4 +1,4 @@
-package com.wunderground.pws.persistence.repositories;
+package com.wunderground.pws.persistence.configuration;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

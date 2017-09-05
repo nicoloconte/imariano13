@@ -1,6 +1,13 @@
 com\wunderground\pws\batch\processor\ConditionItemProcessor.class
-com\wunderground\pws\batch\reader\WundergroudRestReader.class
-com\wunderground\pws\batch\writer\DynamoDBItemWriter.class
-com\wunderground\pws\batch\configuration\BatchConfiguration.class
-com\wunderground\pws\batch\configuration\BatchScheduler.class
+com\wunderground\pws\batch\configuration\BatchAstronomyScheduler.class
+com\wunderground\pws\batch\reader\AbstractWundergroudRestReader.class
 com\wunderground\pws\batch\listener\JobCompletionNotificationListener.class
+com\wunderground\pws\batch\reader\WundergroudConditionRestReader.class
+com\wunderground\pws\batch\writer\DynamoDBConditionsItemWriter.class
+com\wunderground\pws\batch\configuration\BatchAstronomyConfiguration.class
+com\wunderground\pws\batch\writer\DynamoDBAstronomyItemWriter.class
+com\wunderground\pws\batch\configuration\BatchConditionsConfiguration.class
+com\wunderground\pws\batch\processor\AstronomyItemProcessor.class
+com\wunderground\pws\batch\reader\WundergroudAstronomyRestReader.class
+com\wunderground\pws\batch\writer\DynamoDBAstronomyItemWriter$1.class
+com\wunderground\pws\batch\configuration\BatchScheduler.class

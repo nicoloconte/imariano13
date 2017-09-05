@@ -7,8 +7,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.wunderground.pws.model.CurrentObservation;
-import com.wunderground.pws.model.LastObservation;
+import com.wunderground.pws.model.entities.CurrentObservation;
+import com.wunderground.pws.model.entities.LastObservation;
 import com.wunderground.pws.persistence.repositories.ConditionRepository;
 import com.wunderground.pws.persistence.repositories.LastObservationRepository;
 

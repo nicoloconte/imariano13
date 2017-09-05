@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemProcessor;
 
 import com.wunderground.pws.model.Condition;
-import com.wunderground.pws.model.CurrentObservation;
+import com.wunderground.pws.model.entities.CurrentObservation;
 
 public class ConditionItemProcessor implements ItemProcessor<Condition, CurrentObservation>{
 

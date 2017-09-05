@@ -18,7 +18,8 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
 import com.amazonaws.services.dynamodbv2.model.ProvisionedThroughput;
 import com.amazonaws.services.dynamodbv2.model.ResourceNotFoundException;
-import com.wunderground.pws.model.ObservationMinMax;
+import com.wunderground.pws.model.entities.ObservationMinMax;
+import com.wunderground.pws.persistence.configuration.PersistenceApplication;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration

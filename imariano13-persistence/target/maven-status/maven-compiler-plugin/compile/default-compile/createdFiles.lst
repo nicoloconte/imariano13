@@ -1,5 +1,7 @@
-com\wunderground\pws\persistence\converter\ZonedDateTimeDynamoConverter.class
+com\wunderground\pws\persistence\configuration\PersistenceApplication.class
+com\wunderground\pws\persistence\configuration\DynamoDBConfiguration.class
+com\wunderground\pws\persistence\repositories\WuResponseRepository.class
+com\wunderground\pws\persistence\repositories\AstronomyRepository.class
 com\wunderground\pws\persistence\repositories\ConditionRepository.class
 com\wunderground\pws\persistence\repositories\LastObservationRepository.class
 com\wunderground\pws\persistence\repositories\MinMaxRepository.class
-com\wunderground\pws\persistence\configuration\DynamoDBConfiguration.class

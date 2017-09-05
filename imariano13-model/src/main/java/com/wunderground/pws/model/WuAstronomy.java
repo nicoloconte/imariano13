@@ -6,21 +6,26 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.wunderground.pws.model.entities.CurrentObservation;
+import com.wunderground.pws.model.entities.MoonPhase;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Condition {
+public class WuAstronomy {
 
-	@JsonProperty("current_observation")
-	private CurrentObservation currentObservation;
+	@JsonProperty("moon_phase")
+	private MoonPhase moonPhase;
 
-	public CurrentObservation getCurrentObservation() {
-		return currentObservation;
+	public MoonPhase getMoonPhase() {
+		return moonPhase;
+	}
+
+	public void setMoonPhase(MoonPhase moonPhase) {
+		this.moonPhase = moonPhase;
 	}
 
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);
 	}
+
 }

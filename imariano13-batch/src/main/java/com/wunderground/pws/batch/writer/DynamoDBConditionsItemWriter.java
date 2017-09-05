@@ -7,16 +7,16 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemWriter;
 
-import com.wunderground.pws.model.CurrentObservation;
-import com.wunderground.pws.model.LastObservation;
-import com.wunderground.pws.model.ObservationMinMax;
+import com.wunderground.pws.model.entities.CurrentObservation;
+import com.wunderground.pws.model.entities.LastObservation;
+import com.wunderground.pws.model.entities.ObservationMinMax;
 import com.wunderground.pws.persistence.repositories.ConditionRepository;
 import com.wunderground.pws.persistence.repositories.LastObservationRepository;
 import com.wunderground.pws.persistence.repositories.MinMaxRepository;
 
-public class DynamoDBItemWriter implements ItemWriter<CurrentObservation> {
+public class DynamoDBConditionsItemWriter implements ItemWriter<CurrentObservation> {
 
-	private static final Logger log = LoggerFactory.getLogger(DynamoDBItemWriter.class);
+	private static final Logger log = LoggerFactory.getLogger(DynamoDBConditionsItemWriter.class);
 
 	private static final String MAX = "MAX";
 	private static final String MIN = "MIN";
@@ -25,7 +25,7 @@ public class DynamoDBItemWriter implements ItemWriter<CurrentObservation> {
 	private MinMaxRepository minMaxRepository;
 	private LastObservationRepository lastObservationRepository;
 
-	public DynamoDBItemWriter(ConditionRepository conditionRepository, MinMaxRepository minMaxRepository, LastObservationRepository lastObservationRepository) {
+	public DynamoDBConditionsItemWriter(ConditionRepository conditionRepository, MinMaxRepository minMaxRepository, LastObservationRepository lastObservationRepository) {
 		super();
 		this.conditionRepository = conditionRepository;
 		this.minMaxRepository = minMaxRepository;

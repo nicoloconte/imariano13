@@ -16,25 +16,23 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.web.client.RestTemplate;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.wunderground.pws.batch.listener.JobCompletionNotificationListener;
 import com.wunderground.pws.batch.processor.ConditionItemProcessor;
-import com.wunderground.pws.batch.reader.WundergroudRestReader;
-import com.wunderground.pws.batch.writer.DynamoDBItemWriter;
+import com.wunderground.pws.batch.reader.WundergroudConditionRestReader;
+import com.wunderground.pws.batch.writer.DynamoDBConditionsItemWriter;
 import com.wunderground.pws.model.Condition;
-import com.wunderground.pws.model.CurrentObservation;
+import com.wunderground.pws.model.entities.CurrentObservation;
 import com.wunderground.pws.persistence.repositories.ConditionRepository;
 import com.wunderground.pws.persistence.repositories.LastObservationRepository;
 import com.wunderground.pws.persistence.repositories.MinMaxRepository;
+import com.wunderground.pws.persistence.repositories.WuResponseRepository;
 
 @Configuration
 @EnableBatchProcessing
 @Import({ BatchScheduler.class })
 @ComponentScan("com.wunderground.pws.batch")
-public class BatchConfiguration {
+public class BatchConditionsConfiguration {
 
 	@Autowired
 	private JobBuilderFactory jobBuilderFactory;
@@ -49,6 +47,8 @@ public class BatchConfiguration {
 	@Autowired
 	private MinMaxRepository minMaxRepository;
 	@Autowired
+	private WuResponseRepository wuResponseRespository;
+	@Autowired
 	private LastObservationRepository lastObservationRepository;
 	@Value("${wu.token}")
 	private String token;
@@ -56,53 +56,40 @@ public class BatchConfiguration {
 	private String conditionUrl;
 	
 	@Bean
-	public RestTemplate restTemplate() {
-		return new RestTemplate();
-	}
-
-	@Bean
-	public ObjectMapper objectMapper() {
-		ObjectMapper objectMapper = new ObjectMapper();
-		objectMapper.registerModule(new JavaTimeModule());
-		return objectMapper;
-	}
-
-	@Bean
-	public WundergroudRestReader reader() {
-		WundergroudRestReader reader = new WundergroudRestReader(conditionUrl, token);
+	public WundergroudConditionRestReader conditionReader() {
+		WundergroudConditionRestReader reader = new WundergroudConditionRestReader(conditionUrl, token, wuResponseRespository);
 		return reader;
 	}
 
 	@Bean
-	public DynamoDBItemWriter writer() {
-		DynamoDBItemWriter writer = new DynamoDBItemWriter(conditionRepository, minMaxRepository, lastObservationRepository);
+	public DynamoDBConditionsItemWriter conditionWriter() {
+		DynamoDBConditionsItemWriter writer = new DynamoDBConditionsItemWriter(conditionRepository, minMaxRepository, lastObservationRepository);
 		return writer;
 	}
 
 	@Bean
-	public ConditionItemProcessor processor() {
+	public ConditionItemProcessor conditionProcessor() {
 		return new ConditionItemProcessor();
 	}
 
 	@Bean
-	public Job job() {
+	public Job conditionJob() {
 		return jobBuilderFactory.get("importImariano13ConditionJob").incrementer(new RunIdIncrementer())
-				.listener(listener).flow(step()).end().build();
+				.listener(listener).flow(conditionStep()).end().build();
 	}
 
 	@Bean
-	public Step step() {
+	public Step conditionStep() {
 		return stepBuilderFactory.get("importImariano13ConditionStep").<Condition, CurrentObservation>chunk(1)
-				.reader(reader()).processor(processor()).writer(writer()).build();
+				.reader(conditionReader()).processor(conditionProcessor()).writer(conditionWriter()).build();
 	}
 
 	@Scheduled(cron = "0 */5 * ? * *")
-	public void perform() throws Exception {
+	public void conditionPerform() throws Exception {
 		JobParameters param = new JobParametersBuilder()
 				.addString("importImariano13ConditionStepJobID", String.valueOf(System.currentTimeMillis()))
 				.toJobParameters();
-
-		jobLauncher.run(job(), param);
+		jobLauncher.run(conditionJob(), param);
 	}
 
 }

@@ -1,6 +1,12 @@
-D:\Workspace\pws\imariano13\imariano13-batch\src\main\java\com\wunderground\pws\batch\configuration\BatchConfiguration.java
-D:\Workspace\pws\imariano13\imariano13-batch\src\main\java\com\wunderground\pws\batch\reader\WundergroudRestReader.java
-D:\Workspace\pws\imariano13\imariano13-batch\src\main\java\com\wunderground\pws\batch\writer\DynamoDBItemWriter.java
+D:\Workspace\pws\imariano13\imariano13-batch\src\main\java\com\wunderground\pws\batch\processor\AstronomyItemProcessor.java
+D:\Workspace\pws\imariano13\imariano13-batch\src\main\java\com\wunderground\pws\batch\reader\WundergroudAstronomyRestReader.java
+D:\Workspace\pws\imariano13\imariano13-batch\src\main\java\com\wunderground\pws\batch\reader\WundergroudConditionRestReader.java
 D:\Workspace\pws\imariano13\imariano13-batch\src\main\java\com\wunderground\pws\batch\processor\ConditionItemProcessor.java
+D:\Workspace\pws\imariano13\imariano13-batch\src\main\java\com\wunderground\pws\batch\configuration\BatchConditionsConfiguration.java
 D:\Workspace\pws\imariano13\imariano13-batch\src\main\java\com\wunderground\pws\batch\listener\JobCompletionNotificationListener.java
+D:\Workspace\pws\imariano13\imariano13-batch\src\main\java\com\wunderground\pws\batch\writer\DynamoDBAstronomyItemWriter.java
+D:\Workspace\pws\imariano13\imariano13-batch\src\main\java\com\wunderground\pws\batch\writer\DynamoDBConditionsItemWriter.java
+D:\Workspace\pws\imariano13\imariano13-batch\src\main\java\com\wunderground\pws\batch\configuration\BatchAstronomyConfiguration.java
+D:\Workspace\pws\imariano13\imariano13-batch\src\main\java\com\wunderground\pws\batch\configuration\BatchAstronomyScheduler.java
+D:\Workspace\pws\imariano13\imariano13-batch\src\main\java\com\wunderground\pws\batch\reader\AbstractWundergroudRestReader.java
 D:\Workspace\pws\imariano13\imariano13-batch\src\main\java\com\wunderground\pws\batch\configuration\BatchScheduler.java

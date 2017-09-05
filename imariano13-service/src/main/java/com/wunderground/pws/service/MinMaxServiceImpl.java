@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.wunderground.pws.model.ObservationMinMax;
+import com.wunderground.pws.model.entities.ObservationMinMax;
 import com.wunderground.pws.persistence.repositories.MinMaxRepository;
 
 @Service

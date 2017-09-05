@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.wunderground.pws.model.CurrentObservation;
+import com.wunderground.pws.model.entities.CurrentObservation;
 import com.wunderground.pws.service.ConditionsService;
 
 @Controller

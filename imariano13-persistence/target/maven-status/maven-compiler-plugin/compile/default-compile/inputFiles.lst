@@ -2,4 +2,6 @@ D:\Workspace\pws\imariano13\imariano13-persistence\src\main\java\com\wundergroun
 D:\Workspace\pws\imariano13\imariano13-persistence\src\main\java\com\wunderground\pws\persistence\repositories\MinMaxRepository.java
 D:\Workspace\pws\imariano13\imariano13-persistence\src\main\java\com\wunderground\pws\persistence\repositories\ConditionRepository.java
 D:\Workspace\pws\imariano13\imariano13-persistence\src\main\java\com\wunderground\pws\persistence\configuration\DynamoDBConfiguration.java
-D:\Workspace\pws\imariano13\imariano13-persistence\src\main\java\com\wunderground\pws\persistence\converter\ZonedDateTimeDynamoConverter.java
+D:\Workspace\pws\imariano13\imariano13-persistence\src\main\java\com\wunderground\pws\persistence\configuration\PersistenceApplication.java
+D:\Workspace\pws\imariano13\imariano13-persistence\src\main\java\com\wunderground\pws\persistence\repositories\WuResponseRepository.java
+D:\Workspace\pws\imariano13\imariano13-persistence\src\main\java\com\wunderground\pws\persistence\repositories\AstronomyRepository.java

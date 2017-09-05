@@ -1,4 +1,4 @@
-package com.wunderground.pws.model;
+package com.wunderground.pws.model.entities;
 
 import java.time.ZonedDateTime;
 
