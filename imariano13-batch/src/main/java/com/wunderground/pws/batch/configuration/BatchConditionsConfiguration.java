@@ -23,10 +23,8 @@ import com.wunderground.pws.batch.reader.WundergroudConditionRestReader;
 import com.wunderground.pws.batch.writer.DynamoDBConditionsItemWriter;
 import com.wunderground.pws.model.Condition;
 import com.wunderground.pws.model.entities.CurrentObservation;
-import com.wunderground.pws.persistence.repositories.ConditionRepository;
-import com.wunderground.pws.persistence.repositories.LastObservationRepository;
-import com.wunderground.pws.persistence.repositories.MinMaxRepository;
 import com.wunderground.pws.persistence.repositories.WuResponseRepository;
+import com.wunderground.pws.service.ConditionsService;
 
 @Configuration
 @EnableBatchProcessing
@@ -43,13 +41,9 @@ public class BatchConditionsConfiguration {
 	@Autowired
 	private JobCompletionNotificationListener listener;
 	@Autowired
-	private ConditionRepository conditionRepository;
-	@Autowired
-	private MinMaxRepository minMaxRepository;
-	@Autowired
 	private WuResponseRepository wuResponseRespository;
 	@Autowired
-	private LastObservationRepository lastObservationRepository;
+	private ConditionsService conditionsService;
 	@Value("${wu.token}")
 	private String token;
 	@Value("${wu.condition.url}")
@@ -63,7 +57,7 @@ public class BatchConditionsConfiguration {
 
 	@Bean
 	public DynamoDBConditionsItemWriter conditionWriter() {
-		DynamoDBConditionsItemWriter writer = new DynamoDBConditionsItemWriter(conditionRepository, minMaxRepository, lastObservationRepository);
+		DynamoDBConditionsItemWriter writer = new DynamoDBConditionsItemWriter(conditionsService);
 		return writer;
 	}
 

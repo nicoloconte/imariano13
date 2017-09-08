@@ -1,5 +1,9 @@
+com\wunderground\pws\service\AstronomyService.class
 com\wunderground\pws\service\ConditionsService.class
-com\wunderground\pws\service\configuration\ServiceConfiguration.class
 com\wunderground\pws\service\MinMaxService.class
+com\wunderground\pws\service\AstronomyServiceImpl$1.class
 com\wunderground\pws\service\ConditionsServiceImpl.class
+com\wunderground\pws\service\ConditionsServiceImpl$1.class
+com\wunderground\pws\service\configuration\ServiceConfiguration.class
+com\wunderground\pws\service\AstronomyServiceImpl.class
 com\wunderground\pws\service\MinMaxServiceImpl.class

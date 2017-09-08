@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+	<title>Stazione meteo Mariano Comense</title>
+	<script src="/app/static/js/external/react.min.js"></script>
+	<script src="/app/static/js/external/react-dom.min.js"></script>
+	<script src="/app/static/js/external/jquery-3.2.1.min.js"></script>
+	<script src="/app/static/js/external/browser.min.js"></script>
+	<link rel="stylesheet" href="/app/static/css/external/bootstrap.min.css"></link>
+</head>
+<body>
+	<div id='root'></div>
+
+	<script type="text/babel">
+	var App = React.createClass({
+	  loadActualConditionFromServer: function () {
+	    var self = this;
+	    $.ajax({
+	      url: "/conditions/actual"
+	    }).then(function (data) {
+	      self.setState({actualCondition: data});
+	    });
+	  },
+
+	  getInitialState: function () {
+	    return {actualCondition: []};
+	  },
+
+	  componentDidMount: function () {
+	    this.loadActualConditionFromServer();
+	  },
+
+	  render: function() {
+	    return ( <ActualConditionTable actualCondition={this.state.actualCondition}/> );
+	  }
+	});
+	var ActualConditionTable = React.createClass({
+		render: function() {
+	    return (
+				<div>
+					<div>Condizioni attuali</div>
+					<div>Temperatura:{this.props.actualCondition.temp_c}</div>
+				</div>
+				);
+		}
+	});
+	ReactDOM.render(
+		<App />, document.getElementById('root')
+	);
+	</script>
+</body>
+</html>

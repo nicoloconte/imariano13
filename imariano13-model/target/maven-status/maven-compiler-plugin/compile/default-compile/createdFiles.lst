@@ -1,12 +1,13 @@
-com\wunderground\pws\model\entities\CurrentObservation.class
 com\wunderground\pws\model\converter\TimeDynamoConverter.class
+com\wunderground\pws\model\ConditionTrend.class
 com\wunderground\pws\model\entities\WuResponseLog.class
 com\wunderground\pws\model\WuAstronomy.class
 com\wunderground\pws\model\entities\MoonPhase.class
 com\wunderground\pws\model\converter\ZonedDateTimeDynamoMarshaller.class
+com\wunderground\pws\model\converter\ZonedDateTimeDynamoConverter.class
+com\wunderground\pws\model\entities\ErrorLog.class
+com\wunderground\pws\model\entities\CurrentObservation.class
 com\wunderground\pws\model\entities\ObservationMinMax.class
 com\wunderground\pws\model\entities\LastObservation.class
 com\wunderground\pws\model\Time.class
-com\wunderground\pws\model\converter\ZonedDateTimeDynamoConverter.class
-com\wunderground\pws\model\entities\ErrorLog.class
 com\wunderground\pws\model\Condition.class

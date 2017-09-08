@@ -23,7 +23,7 @@ import com.wunderground.pws.batch.reader.WundergroudAstronomyRestReader;
 import com.wunderground.pws.batch.writer.DynamoDBAstronomyItemWriter;
 import com.wunderground.pws.model.WuAstronomy;
 import com.wunderground.pws.model.entities.MoonPhase;
-import com.wunderground.pws.persistence.repositories.AstronomyRepository;
+import com.wunderground.pws.service.AstronomyService;
 
 @Configuration
 @EnableBatchProcessing
@@ -40,7 +40,7 @@ public class BatchAstronomyConfiguration {
 	@Autowired
 	private JobCompletionNotificationListener listener;
 	@Autowired
-	private AstronomyRepository astronomyRepository;
+	private AstronomyService astronomyService;
 	@Value("${wu.token}")
 	private String token;
 	@Value("${wu.astronomy.url}")
@@ -54,7 +54,7 @@ public class BatchAstronomyConfiguration {
 
 	@Bean
 	public DynamoDBAstronomyItemWriter astronomyWriter() {
-		DynamoDBAstronomyItemWriter writer = new DynamoDBAstronomyItemWriter(astronomyRepository);
+		DynamoDBAstronomyItemWriter writer = new DynamoDBAstronomyItemWriter(astronomyService);
 		return writer;
 	}
 

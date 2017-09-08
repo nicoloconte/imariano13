@@ -49,6 +49,15 @@ public class MoonPhase {
 	@DynamoDBTypeConverted(converter = TimeDynamoConverter.class)
 	private Time moonset;
 
+	public Integer getDayLength() {
+		if (sunrise == null || sunset == null) {
+			return null;
+		}
+		int sunsetTime = new Integer(sunset.getHour().concat(sunset.getMinute()));
+		int sunriseTime = new Integer(sunrise.getHour().concat(sunrise.getMinute()));
+		return sunsetTime - sunriseTime;
+	}
+
 	public String getId() {
 		return id;
 	}

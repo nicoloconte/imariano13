@@ -6,18 +6,5 @@
 		<artifactId>imariano13</artifactId>
 		<version>1.3.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>imariano13-rest</artifactId>
-
-	<dependencies>
-		<dependency>
-			<groupId>com.wunderground.pws</groupId>
-			<artifactId>imariano13-service</artifactId>
-			<version>${imariano13.version}</version>
-		</dependency>
-	
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-	</dependencies>
+	<artifactId>imariano13-frontend</artifactId>
 </project>
